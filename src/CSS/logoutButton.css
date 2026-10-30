@@ -1,0 +1,44 @@
+.dashboard-logout-control {
+    border-radius: 10px !important;
+    color: #344054 !important;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease !important;
+    transform-origin: center;
+}
+
+.dashboard-logout-control:hover {
+    transform: scale(1.045);
+    background-color: #fff0f1 !important;
+    color: #c62828 !important;
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.12);
+}
+
+.dashboard-logout-control:hover .MuiSvgIcon-root,
+.dashboard-logout-control:hover .MuiListItemIcon-root,
+.dashboard-logout-control:hover .MuiListItemText-primary {
+    color: #c62828 !important;
+}
+
+.admin-dashboard-logout-control:hover {
+    transform: none;
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+.dashboard-logout-control:focus-visible {
+    outline: 3px solid rgba(198, 40, 40, 0.35);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-logout-control {
+        transition: none !important;
+    }
+
+    .dashboard-logout-control:hover {
+        transform: none;
+    }
+}

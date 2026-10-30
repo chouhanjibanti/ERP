@@ -1,0 +1,227 @@
+.account-form-page {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: clamp(1rem, 4vw, 3rem);
+    background:
+        radial-gradient(ellipse at top left, rgba(129, 95, 155, 0.12), transparent 38%),
+        #f2f2f8;
+    color: #101828;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.account-form-page *,
+.account-form-page *::before,
+.account-form-page *::after {
+    box-sizing: border-box;
+}
+
+.account-form-page .account-form-card {
+    display: flex;
+    width: min(100%, 900px);
+    flex-direction: column;
+    gap: 0;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    border: 1px solid #e4e0ec;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 16px 42px rgba(49, 35, 67, 0.12);
+}
+
+.account-form-page .account-form-card .MuiStack-root {
+    flex-wrap: wrap;
+}
+
+.account-form-page .account-form-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 15px;
+    background: #f0eafa;
+    color: #6941c6;
+}
+
+.account-form-page .account-form-icon svg {
+    font-size: 1.65rem;
+}
+
+.account-form-page .account-form-title {
+    color: #594473;
+    font-size: clamp(1.55rem, 4vw, 2.1rem);
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.account-form-page .account-back-button {
+    min-height: 40px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: #6941c6;
+    font-size: 0.85rem;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.account-form-page .account-back-button:hover {
+    background: #f6f2fc;
+}
+
+.account-form-page .account-form-section {
+    margin-top: 1.35rem;
+    padding: 1.25rem;
+    border: 1px solid #ece8f2;
+    border-radius: 13px;
+    background: #fdfcff;
+}
+
+.account-form-page .account-section-title {
+    margin: 0 0 1.1rem;
+    color: #344054;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.account-form-page .account-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.25rem 1rem;
+}
+
+.account-form-page .MuiFormControl-root {
+    width: 100%;
+    min-width: 0;
+}
+
+.account-form-page .MuiInputBase-root {
+    min-height: 56px;
+    border-radius: 9px;
+    background: #fff;
+    color: #101828;
+    font-family: inherit;
+}
+
+.account-form-page .MuiInputBase-input {
+    box-sizing: border-box;
+    max-width: none;
+    padding: 16.5px 14px;
+    color: #101828;
+    font: inherit;
+}
+
+.account-form-page .MuiInputBase-inputMultiline {
+    padding: 0;
+}
+
+.account-form-page .MuiInputLabel-root {
+    color: #667085;
+    font-family: inherit;
+}
+
+.account-form-page .MuiInputLabel-root.Mui-focused {
+    color: #6941c6;
+}
+
+.account-form-page .MuiOutlinedInput-notchedOutline {
+    border-color: #d0d5dd;
+}
+
+.account-form-page .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #a996c0;
+}
+
+.account-form-page .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #815f9b;
+    border-width: 2px;
+}
+
+.account-form-page .MuiFormHelperText-root {
+    margin-left: 2px;
+    color: #667085;
+    font-family: inherit;
+}
+
+.account-form-page .account-image-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.65rem;
+    grid-column: 1 / -1;
+    padding: 0.9rem 1rem;
+    border: 1px dashed #c9bdd8;
+    border-radius: 9px;
+    background: #fff;
+}
+
+.account-form-page .account-image-field > label {
+    color: #344054;
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.account-form-page .account-image-field > label span {
+    color: #667085;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.account-form-page .account-image-field input[type="file"] {
+    width: 100%;
+    max-width: none;
+    padding: 0.55rem;
+    border: 1px solid #eaecf0;
+    border-radius: 7px;
+    background: #fcfcfd;
+    color: #475467;
+    font: inherit;
+    font-size: 0.85rem;
+}
+
+.account-form-page .account-submit-button {
+    align-self: flex-start;
+    min-height: 46px;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 9px;
+    background: #815f9b;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: none;
+}
+
+.account-form-page .account-submit-button:hover {
+    background: #594473;
+}
+
+.account-form-page .account-submit-button:disabled {
+    background: #a897b8;
+    color: #fff;
+}
+
+@media (max-width: 640px) {
+    .account-form-page {
+        padding: 0.75rem;
+    }
+
+    .account-form-page .account-form-card {
+        padding: 1.15rem;
+        border-radius: 13px;
+    }
+
+    .account-form-page .account-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.15rem;
+    }
+
+    .account-form-page .account-form-grid > * {
+        grid-column: 1 / -1;
+    }
+
+    .account-form-page .account-form-card > .MuiStack-root {
+        align-items: flex-start;
+    }
+}
