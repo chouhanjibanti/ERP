@@ -36,6 +36,7 @@ async function main() {
   const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/erp";
   await mongoose.connect(uri);
   const Admin = require(path.join(apiRoot, "models", "admin.js"));
+  const provisionedAdmins = [];
 
   for (const account of accounts) {
     const passwordHash = await bcrypt.hash(account.password, 12);
@@ -55,8 +56,14 @@ async function main() {
     if (!admin || !(await bcrypt.compare(account.password, admin.password))) {
       throw new Error(`Could not verify the provisioned password for ${account.email}.`);
     }
+    provisionedAdmins.push(admin);
     console.log(`Provisioned admin account: ${account.email}`);
   }
+
+  const cleanup = await Admin.deleteMany({
+    _id: { $nin: provisionedAdmins.map((admin) => admin._id) },
+  });
+  console.log(`Removed ${cleanup.deletedCount} other admin account(s).`);
 }
 
 main()

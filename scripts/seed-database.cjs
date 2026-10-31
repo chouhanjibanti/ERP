@@ -1,4 +1,4 @@
-// Generates deterministic fixture documents for every registered schema.
+// Generates deterministic fixture documents for every non-admin schema.
 const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -331,21 +331,25 @@ async function main() {
   if (models.length !== 30) {
     throw new Error(`Expected 30 schema modules, found ${models.length}. Refusing to seed an incomplete model set.`);
   }
+  const fixtureModels = models.filter((Model) => Model.modelName.toLowerCase() !== "admin");
+  if (fixtureModels.length !== 29) {
+    throw new Error(`Expected 29 non-admin schemas, found ${fixtureModels.length}. Refusing to seed an incomplete model set.`);
+  }
 
   if (!dryRun) {
     await mongoose.connect(uri);
   }
 
   const results = [];
-  for (const Model of models) {
+  for (const Model of fixtureModels) {
     results.push(await seedModel(Model, dryRun));
   }
 
   console.table(results);
   console.log(
     dryRun
-      ? `Validated ${recordCount} test records for each of ${models.length} schemas; database was not changed.`
-      : `Seeded ${recordCount} test records for each of ${models.length} schemas.`,
+      ? `Validated ${recordCount} test records for each of ${fixtureModels.length} non-admin schemas; database was not changed.`
+      : `Seeded ${recordCount} test records for each of ${fixtureModels.length} non-admin schemas.`,
   );
 }
 

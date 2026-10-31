@@ -1,6 +1,7 @@
 
 const Transaction = require('../models/da'); 
 const RoomAvailability = require('../models/hosteldetail/room');
+const HostelStudent = require('../models/hosteldetail/studentschema');
 let Books = require('../models/Book');
 const Student = require('../models/admission');
 const Staff = require('../models/staff');
@@ -161,14 +162,15 @@ exports.dashboard = async (req, res) => {
         const totalStudents = await Student.countDocuments({});
         
         const totalStaff = await Staff.countDocuments({});
-        
         const totalBooks = await Books.countDocuments({});
 
-        const roomsOccupied = 15; 
+        const occupiedRoomNumbers = await HostelStudent.distinct('roomNo', {
+            roomNo: { $exists: true, $ne: '' },
+        });
         
         const dashboardStats = {
             total: totalRooms,
-            roomsOccupied: roomsOccupied,
+            roomsOccupied: occupiedRoomNumbers.length,
             totalStock: totalBooks,
             issued: booksIssued,
             students: totalStudents,

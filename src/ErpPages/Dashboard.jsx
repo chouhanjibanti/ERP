@@ -308,7 +308,6 @@ const Dashboard = () => {
         booksIssued: null, 
         totalBooks: null,
         totalRooms: null,
-        roomsOccupied: null, 
         totalStudents: null,
         totalStaff: null,
         hostelOccupancy: null, 
@@ -380,7 +379,6 @@ const Dashboard = () => {
                 totalRooms,
                 totalStudents: metricsResponse.data.students ?? 0,
                 totalStaff: metricsResponse.data.staff ?? 0,
-                roomsOccupied,
                 hostelOccupancy: occupancy,
             }));
             setMetricsError('');
