@@ -3,7 +3,7 @@ let connection;
 
 exports.erp = () => {
   if (!connection) {
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/erp";
+    const mongoUri = process.env.MONGODB_URI ;
     connection = mongo.connect(mongoUri).catch((error) => {
       connection = undefined;
       throw error;

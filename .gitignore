@@ -3,4 +3,5 @@ node_modules/
 out/
 .env
 .env.*
+src/server/api/.env
 !.env.example
