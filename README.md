@@ -5,12 +5,17 @@
    git clone <repo-url>
    cd ERP_PROJECT\Frontend
    ```
+
 2. Install dependencies:
 
    npm install
    ```
-3. Paste the enviornment variabl4e from whatsapp
-   -- src/server/api   -> .env 
+   
+3. Paste the environment variable from whatsapp
+
+   src/server/api   -> .env 
+    ```
+
 
 4. Run the development server:
   
