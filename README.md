@@ -82,3 +82,9 @@ contracts.
 
 admin@schoolerp.com - school@erp54321
 superadmin@schoolerp.com - school@supererp54321
+
+Staff :- 
+
+
+
+Student :- 
